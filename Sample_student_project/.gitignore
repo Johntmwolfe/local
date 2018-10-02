@@ -1,0 +1,7 @@
+game
+*.o
+*.gch
+core
+html/
+latex/
+archive.tar.gz

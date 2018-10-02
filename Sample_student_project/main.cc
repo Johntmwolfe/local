@@ -16,6 +16,8 @@ using namespace main_savitch_14;
 /**
  * @brief Entry point for the program. Parameters from the environment are
  * ignored.
+ * @return Returns EXIT_SUCCESS (default specified by libc, as main() does
+ * not specify a return value).
  */
 int main()
 {
