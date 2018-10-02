@@ -1,5 +1,5 @@
 .PHONY: all
-all: build archive
+all: build archive doc
 
 .PHONY: build
 build: game
@@ -7,9 +7,13 @@ build: game
 .PHONY: archive
 archive: archive.tar.gz
 
+.PHONY: doc
+doc: game.cc game.h main.cc othello.cc othello.h piece.h colors.h doxygen.cfg
+	doxygen doxygen.cfg
+
 .PHONY: clean
 clean:
-	-rm -f game *.o archive.tar.gz *.h.gch core
+	-rm -rf game *.o archive.tar.gz *.h.gch core html/ latex/
 
 archive.tar.gz: *.cc *.h Makefile
 	tar -czf $@ $^
