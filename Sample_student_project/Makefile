@@ -8,12 +8,14 @@ build: game
 archive: archive.tar.gz
 
 .PHONY: doc
-doc: game.cc game.h main.cc othello.cc othello.h piece.h colors.h doxygen.cfg
-	-doxygen doxygen.cfg
+doc: html/index.html
 
 .PHONY: clean
 clean:
 	-rm -rf game *.o archive.tar.gz *.h.gch core html/ latex/
+
+html/index.html: game.cc game.h main.cc othello.cc othello.h piece.h colors.h doxygen.cfg
+	-doxygen doxygen.cfg
 
 archive.tar.gz: *.cc *.h Makefile
 	tar -czf $@ $^
