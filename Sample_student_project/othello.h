@@ -12,14 +12,15 @@
 using namespace std;
 
 /**
+* @file
 * @brief The overall header file for the program, encompassing colors, piece and game.h
 * private variables for pawn color (black, white), the number of skips and openSpots
 *
-* @author Brock Ferrell 
+* @author Brock Ferrell
 */
 
-namespace main_savitch_14
-{
+namespace main_savitch_14{
+
 
 class Othello: public game {
 public:
