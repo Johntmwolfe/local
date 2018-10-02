@@ -11,6 +11,13 @@
 #include <iostream>
 using namespace std;
 
+/**
+* @brief The overall header file for the program, encompassing colors, piece and game.h
+* private variables for pawn color (black, white), the number of skips and openSpots
+*
+* @author Brock Ferrell 
+*/
+
 namespace main_savitch_14
 {
 
@@ -21,6 +28,12 @@ public:
 
 	void display_status()const;
 	int evaluate()const;
+
+	/**
+	* @brief this boolean function checks for a game winning or losing condition
+	* @param none
+	* @return true or false
+	*/
 	bool is_game_over()const;
 	bool is_legal(const string& move)const;
 	void make_move(const string& move);
@@ -46,5 +59,3 @@ private:
 }
 
 #endif
-
-
