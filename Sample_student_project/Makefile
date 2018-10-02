@@ -1,0 +1,27 @@
+.PHONY: all
+all: build archive
+
+.PHONY: build
+build: game
+
+.PHONY: archive
+archive: archive.tar.gz
+
+.PHONY: clean
+clean:
+	-rm game *.o archive.tar.gz *.h.gch core
+
+archive.tar.gz: *.cc *.h Makefile
+	tar -czf $@ $^
+
+game: main.o game.o othello.o
+	g++ -o $@ $^
+
+main.o: main.cc game.h othello.h
+	g++ -c main.cc
+
+game.o: game.cc game.h
+	g++ -c game.cc
+
+othello.o: othello.cc othello.h
+	g++ -c othello.cc
