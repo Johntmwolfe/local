@@ -9,7 +9,7 @@ archive: archive.tar.gz
 
 .PHONY: doc
 doc: game.cc game.h main.cc othello.cc othello.h piece.h colors.h doxygen.cfg
-	doxygen doxygen.cfg
+	-doxygen doxygen.cfg
 
 .PHONY: clean
 clean:
