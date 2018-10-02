@@ -9,7 +9,7 @@ archive: archive.tar.gz
 
 .PHONY: clean
 clean:
-	-rm game *.o archive.tar.gz *.h.gch core
+	-rm -f game *.o archive.tar.gz *.h.gch core
 
 archive.tar.gz: *.cc *.h Makefile
 	tar -czf $@ $^
