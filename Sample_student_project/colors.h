@@ -23,6 +23,13 @@
 //  just wanted to use to make everything look nice
 //
 //***********************************************************
+/**
+*This document contains string of colors and Bold.
+*Each string of color and its name has escape codes in the C++ libarary that coresponeds to that color in real life.
+*It is as esay as writing "cout<<BLUE<<"The sky is blue"<<endl;
+*/
+@breif This makes it for adding color to a project very easy.
+@author Mathew Beldyk and simple documentation by Megh Oilwala.
 
 #ifndef COLORS_H
 #define COLORS_H
@@ -60,4 +67,3 @@ const string B_CYAN    = "\e[46m";
 const string B_WHITE   = "\e[47m";
 
 #endif //COLORS_H
-
