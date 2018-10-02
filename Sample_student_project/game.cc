@@ -8,15 +8,25 @@
 #include "game.h"     // Provides definition of game class
 using namespace std;
 
+/**
+* @file game.cc
+* @brief implementaion of a generic game class
+* @author Savitch
+*/
+
 namespace main_savitch_14
 {
+
 //*************************************************************************
 // STATIC MEMBER CONSTANTS
 // const int game::SEARCH_LEVELS;
 
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
-
+/**
+* @brief Function keeps track of whos turn it is and if the game is over
+* @return the winner of the game
+*/
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
 // game, with the human player moving first and the computer second.
@@ -44,12 +54,18 @@ game::who game::play( )
 
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
-
+/**
+* @brief Displays an optional message to the user
+* @param message string used to show message
+*/
 void game::display_message(const string& message) const
 {
 	cout << message;
 }
-
+/**
+* @brief Displays message prompting user to enter their move and obtains move from user
+* @return the users move
+*/
 string game::get_user_move( ) const
 {
 	string answer;
@@ -59,7 +75,10 @@ string game::get_user_move( ) const
 	getline(cin, answer);
 	return answer;
 }
-
+/**
+* @brief keeps track who is winning the game.
+* @return the winner
+*/
 game::who game::winning()const {
 
 	int value = evaluate();
@@ -76,6 +95,13 @@ game::who game::winning()const {
 
 //*************************************************************************
 // PRIVATE FUNCTIONS (these are the same for every game)
+
+/**
+* @brief Evaluates what move would be the best for the computer to make
+* @param look_ahead how deep to go to evaluate move
+* @param beat_this compared to board position to find best move
+* @return best move possible
+*/
 
 int game::eval_with_lookahead(int look_ahead, int beat_this)
 // Evaluate a board position with lookahead.
@@ -124,7 +150,11 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	// The answer we return should be from player's perspective, so multiply times -1:
 	return -best_value;
 }
-
+/** 
+* @brief looks at all legal moves the computer could make and evaluates the best move available.
+* @see make_move()
+* @see eval_with_lookahead()
+*/
 void game::make_computer_move( )
 {
 	queue<string> moves;
@@ -157,8 +187,15 @@ void game::make_computer_move( )
 	// Make the best move.
 	make_move(best_move);
 }
-
+/**
+* @brief Takes move from user and checks if it is a legal move. If it is make the move. 
+* If not tell the user it's illegal and get another move. 
+* @see get_user_move()
+* @see is_legal()
+* @see make_move()
+*/
 void game::make_human_move( ) {
+
 	string move;
 
 	move = get_user_move( );
