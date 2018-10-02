@@ -1,3 +1,2 @@
-jw877415	John
-wf679915 Corey
-mo957316 Megh
+This branch is for HW6 in CS3560. We are going to use Doxygen to document the crap out of the game files.
+
