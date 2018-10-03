@@ -152,8 +152,6 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 }
 /** 
 * @brief looks at all legal moves the computer could make and evaluates the best move available.
-* @see make_move()
-* @see eval_with_lookahead()
 */
 void game::make_computer_move( )
 {
@@ -190,9 +188,6 @@ void game::make_computer_move( )
 /**
 * @brief Takes move from user and checks if it is a legal move. If it is make the move. 
 * If not tell the user it's illegal and get another move. 
-* @see get_user_move()
-* @see is_legal()
-* @see make_move()
 */
 void game::make_human_move( ) {
 
