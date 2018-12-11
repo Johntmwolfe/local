@@ -1,2 +1,1 @@
-This branch is for HW6 in CS3560. We are going to use Doxygen to document the crap out of the game files.
-
+This branch is for working on class stuff for CS3560 at Ohio University. Clearing it up so it's ready to use for the final.
